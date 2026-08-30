@@ -1,37 +1,31 @@
 # 🎓 Student Performance Prediction
 
-A machine learning project for analyzing student academic performance using demographic, social, and academic factors.
+A Machine Learning project that analyzes student academic performance and identifies factors associated with final grades.
 
-## 📌 Overview
+## 📌 Project Overview
 
-This project analyzes student performance data and investigates factors that may be associated with students' final grades.
+This project uses the **Student Performance Dataset** from the UCI Machine Learning Repository.
 
-The project uses the **Student Performance dataset** from the UCI Machine Learning Repository.
+The dataset contains demographic, social, and academic information about students from Portuguese secondary schools.
 
-The analysis focuses on understanding relationships between features such as:
-
-- Study time
-- Previous failures
-- Absences
-- First-period grade (G1)
-- Second-period grade (G2)
-- Final grade (G3)
+The main goal is to understand which factors are associated with students' final academic performance and prepare the data for machine learning-based prediction.
 
 ## 🎯 Objectives
 
-- Explore and understand the dataset
-- Perform exploratory data analysis (EDA)
+- Understand and explore the student performance dataset
+- Perform Exploratory Data Analysis (EDA)
 - Analyze relationships between student characteristics and final grades
 - Visualize important patterns
 - Perform correlation analysis
+- Identify important factors affecting student performance
 - Prepare the dataset for machine learning
-- Develop a model for student performance prediction
+- Build a model to predict final student performance
 
 ## 📊 Dataset
 
 The dataset contains information about students from two Portuguese secondary schools.
 
-Important variables include:
+### Important Features
 
 | Feature | Description |
 |---|---|
@@ -45,15 +39,19 @@ Important variables include:
 | `G2` | Second-period grade |
 | `G3` | Final grade |
 
-The target variable for this project is:
+### 🎯 Target Variable
 
-**G3 — Final Grade**
+**`G3` — Final Grade**
+
+The final grade ranges from 0 to 20.
 
 ## 🔎 Exploratory Data Analysis
 
-The project includes:
+The project currently includes:
 
+- Dataset loading
 - Dataset inspection
+- First few records analysis
 - Number of rows and columns
 - Data type analysis
 - Statistical analysis
@@ -63,54 +61,41 @@ The project includes:
 
 ## 📈 Key Findings
 
-The analysis found several interesting relationships with the final grade (`G3`).
+The exploratory analysis produced the following observations:
 
-- `G2` has a strong positive relationship with `G3`.
-- `G1` also has a strong positive relationship with `G3`.
-- Previous failures have a negative relationship with final performance.
-- Study time has a relatively weak positive relationship with final grade.
-- Absences show a very weak linear relationship with final grade in this dataset.
+- **G2 has a very strong positive relationship with G3.**
+- **G1 also has a strong positive relationship with G3.**
+- Previous failures have a **negative relationship** with final performance.
+- Study time has a **weak positive relationship** with final grade.
+- Absences have a **very weak linear relationship** with final grade in this dataset.
 
-For example, the analysis produced approximately:
+### Correlation Results
+
+| Feature | Correlation with G3 |
+|---|---:|
+| `G2` | ~0.905 |
+| `G1` | ~0.801 |
+| `failures` | ~-0.360 |
+| `studytime` | ~0.098 |
+| `absences` | ~0.034 |
+
+> **Note:** Correlation shows linear association, not causation.
+
+## 🛠️ Technologies Used
+
+- **Python**
+- **Pandas**
+- **NumPy**
+- **Matplotlib**
+- **Seaborn**
+- **Scikit-learn**
+- **Google Colab**
+- **Jupyter Notebook**
+
+## 📁 Project Structure
 
 ```text
-Absences vs G3   :  0.034
-Failures vs G3   : -0.360
-Studytime vs G3  :  0.098
-
-Technologies Used
-Python
-Pandas
-NumPy
-Matplotlib
-Seaborn
-Scikit-learn
-Google Colab
-
-📁 Project Structure
 student-performance-prediction/
 │
 ├── Student_Performance_Prediction.ipynb
 └── README.md
-
-🚀 Future Improvements
-
-The project will be extended with:
-
-Feature engineering
-Categorical feature encoding
-Train/test split
-Multiple machine learning models
-Model comparison
-MAE, MSE and R² evaluation
-Final grade prediction
-Interactive Streamlit application
-
-📚 Dataset Source
-
-UCI Machine Learning Repository — Student Performance Dataset.
-
-👩‍💻 Author
-
-B. Neha Sri
-Jupyter Notebook
