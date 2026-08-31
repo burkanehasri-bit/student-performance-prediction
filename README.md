@@ -1,31 +1,51 @@
 # 🎓 Student Performance Prediction
 
-A Machine Learning project that analyzes student academic performance and identifies factors associated with final grades.
+A Machine Learning project that predicts a student's final academic grade (`G3`) using demographic, study-related, attendance, and previous academic performance information.
+
+The project includes a trained Machine Learning model and an interactive Streamlit web application.
+
+---
 
 ## 📌 Project Overview
 
-This project uses the **Student Performance Dataset** from the UCI Machine Learning Repository.
+Student academic performance can be influenced by several factors such as study time, previous failures, attendance, and earlier examination scores.
 
-The dataset contains demographic, social, and academic information about students from Portuguese secondary schools.
+This project uses Machine Learning to analyze these factors and predict a student's final grade.
 
-The main goal is to understand which factors are associated with students' final academic performance and prepare the data for machine learning-based prediction.
+The project was developed from scratch to gain practical experience in:
+
+- Data handling
+- Exploratory data analysis
+- Feature selection
+- Data preprocessing
+- Machine Learning
+- Model evaluation
+- Model deployment
+- Streamlit application development
+- GitHub project management
+
+---
 
 ## 🎯 Objectives
 
-- Understand and explore the student performance dataset
-- Perform Exploratory Data Analysis (EDA)
-- Analyze relationships between student characteristics and final grades
-- Visualize important patterns
-- Perform correlation analysis
-- Identify important factors affecting student performance
-- Prepare the dataset for machine learning
-- Build a model to predict final student performance
+- Analyze student performance data
+- Identify useful features for prediction
+- Preprocess categorical and numerical data
+- Train a Machine Learning regression model
+- Evaluate model performance
+- Save the trained model
+- Build an interactive prediction application
+- Deploy the model through Streamlit
+
+---
 
 ## 📊 Dataset
 
-The dataset contains information about students from two Portuguese secondary schools.
+The project uses the **Student Performance Dataset** from the UCI Machine Learning Repository.
 
-### Important Features
+The dataset contains information about students from Portuguese secondary schools.
+
+For this project, the following features are used:
 
 | Feature | Description |
 |---|---|
@@ -37,65 +57,31 @@ The dataset contains information about students from two Portuguese secondary sc
 | `absences` | Number of school absences |
 | `G1` | First-period grade |
 | `G2` | Second-period grade |
-| `G3` | Final grade |
 
-### 🎯 Target Variable
+### Target Variable
 
-**`G3` — Final Grade**
+`G3` — Final Grade
 
-The final grade ranges from 0 to 20.
+The final grade is measured on a scale from **0 to 20**.
 
-## 🔎 Exploratory Data Analysis
+---
 
-The project currently includes:
+## 🧠 Machine Learning Approach
 
-- Dataset loading
-- Dataset inspection
-- First few records analysis
-- Number of rows and columns
-- Data type analysis
-- Statistical analysis
-- Study time vs final grade visualization
-- Absences vs final grade analysis
-- Correlation analysis
+### 1. Data Loading
 
-## 📈 Key Findings
+The dataset is downloaded and loaded using Pandas.
 
-The exploratory analysis produced the following observations:
+### 2. Feature Selection
 
-- **G2 has a very strong positive relationship with G3.**
-- **G1 also has a strong positive relationship with G3.**
-- Previous failures have a **negative relationship** with final performance.
-- Study time has a **weak positive relationship** with final grade.
-- Absences have a **very weak linear relationship** with final grade in this dataset.
-
-### Correlation Results
-
-| Feature | Correlation with G3 |
-|---|---:|
-| `G2` | ~0.905 |
-| `G1` | ~0.801 |
-| `failures` | ~-0.360 |
-| `studytime` | ~0.098 |
-| `absences` | ~0.034 |
-
-> **Note:** Correlation shows linear association, not causation.
-
-## 🛠️ Technologies Used
-
-- **Python**
-- **Pandas**
-- **NumPy**
-- **Matplotlib**
-- **Seaborn**
-- **Scikit-learn**
-- **Google Colab**
-- **Jupyter Notebook**
-
-## 📁 Project Structure
+Eight relevant features were selected:
 
 ```text
-student-performance-prediction/
-│
-├── Student_Performance_Prediction.ipynb
-└── README.md
+school
+sex
+age
+studytime
+failures
+absences
+G1
+G2
