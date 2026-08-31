@@ -134,6 +134,10 @@ The Random Forest Regressor was evaluated on the test dataset.
 | Mean Squared Error (MSE) | 2.806 |
 | R² Score | 0.863 |
 
+### 📊 Performance Visualization
+
+![Model Performance](model_performance.png)
+
 ### Interpretation
 
 - **MAE = 1.022** — The average prediction error is approximately 1.02 grade points.
