@@ -146,6 +146,8 @@ The Random Forest Regressor was evaluated on the test dataset.
 
 ## 🌐 Streamlit Application
 
+![Streamlit Application](streamlit-app.png)
+
 The project includes an interactive Streamlit application.
 
 Users can enter:
